@@ -8,55 +8,55 @@ public class CalculatorController {
         if(isOperator(view) == true)
         {
             operator = view;
-            return CalculatorModel.GetLastNumber()+operator+CalculatorModel.GetCurrentNumber();
+            return Model.GetLastNumber()+operator+Model.GetCurrentNumber();
         }
 
         else if(view == "clear")
         {
             operator = "";
-            CalculatorModel.Clear();
+            Model.Clear();
             return "";
         }
 
         else if(view == "delete")
         {
-            if(operator == "") CalculatorModel.DeleteLastNumber();
+            if(operator == "") Model.DeleteLastNumber();
             else
             {
-                if(CalculatorModel.GetCurrentNumber() == "") operator = "";
-                else CalculatorModel.DeleteCurrentNumber();
+                if(Model.GetCurrentNumber() == "") operator = "";
+                else Model.DeleteCurrentNumber();
             }
 
-            return CalculatorModel.GetLastNumber()+operator+CalculatorModel.GetCurrentNumber();
+            return Model.GetLastNumber()+operator+Model.GetCurrentNumber();
         }
 
         else if(view == "=")
         {
-            if(operator == "+") return CalculatorModel.Add();
-            if(operator == "-") return CalculatorModel.Subtract();
-            if(operator == "*") return CalculatorModel.Multiply();
-            if(operator == "/") return CalculatorModel.Division();
-            if(operator == "^") return CalculatorModel.Power();
-            if(operator == "%") return CalculatorModel.Mod();
-            if(operator == "Sqrt of ") return CalculatorModel.Sqrt();
+            if(operator == "+") return Model.Add();
+            if(operator == "-") return Model.Subtract();
+            if(operator == "*") return Model.Multiply();
+            if(operator == "/") return Model.Division();
+            if(operator == "^") return Model.Power();
+            if(operator == "%") return Model.Mod();
+            if(operator == "Sqrt of ") return Model.Sqrt();
             else return "MATH ERROR";
         }
 
         else
         {
-            if(CalculatorModel.GetLastNumber().length() >= 10 && operator == "")
+            if(Model.GetLastNumber().length() >= 10 && operator == "")
             {
-                return CalculatorModel.GetLastNumber()+operator+CalculatorModel.GetCurrentNumber();
+                return Model.GetLastNumber()+operator+Model.GetCurrentNumber();
 
             }
-            else if(CalculatorModel.GetCurrentNumber().length() >= 10 && operator != "")
+            else if(Model.GetCurrentNumber().length() >= 10 && operator != "")
             {
-                return CalculatorModel.GetLastNumber()+operator+CalculatorModel.GetCurrentNumber();
+                return Model.GetLastNumber()+operator+Model.GetCurrentNumber();
 
             }
-            else if(operator == "") CalculatorModel.SetLastNumber(view);
-            else CalculatorModel.SetCurrentNumber(view);
-            return CalculatorModel.GetLastNumber()+operator+CalculatorModel.GetCurrentNumber();
+            else if(operator == "") Model.SetLastNumber(view);
+            else Model.SetCurrentNumber(view);
+            return Model.GetLastNumber()+operator+Model.GetCurrentNumber();
         }
     }
 
