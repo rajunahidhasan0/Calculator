@@ -3,7 +3,6 @@ package com.example.finalcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,7 +13,16 @@ public class MainActivity extends AppCompatActivity {
     TextView resultDisplay;
     TextView inputDisplay;
 
-    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    Button button0;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
+    Button button5;
+    Button button6;
+    Button button7;
+    Button button8;
+    Button button9;
     Button buttonAdd;
     Button buttonSub;
     Button buttonMul;
@@ -34,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputDisplay=(TextView) findViewById(R.id.input);
+        inputDisplay = (TextView)  findViewById(R.id.input);
         resultDisplay=(TextView)findViewById(R.id.result);
         button0=(Button) findViewById(R.id.button0);
         button1=(Button)findViewById(R.id.button1);
@@ -57,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSqrt=(Button)findViewById(R.id.buttonroot);
         buttonC=(Button)findViewById(R.id.buttonclear);
         imgButtonDlt=(ImageButton) findViewById(R.id.imgbuttondlt);
+
+
 
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
