@@ -14,4 +14,6 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+    Model model = new Model();
+    //assertEquals(4, model.Add("2","2"));
 }
